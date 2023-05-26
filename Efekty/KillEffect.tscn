@@ -1,0 +1,72 @@
+[gd_scene load_steps=12 format=3 uid="uid://j0ltr8eeea5u"]
+
+[ext_resource type="Script" path="res://Efekty/Effect.gd" id="1_fkvol"]
+[ext_resource type="Texture2D" uid="uid://cwuq28o7ji0xy" path="res://Efekty/KillEffect.png" id="1_k5oya"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_si4tx"]
+atlas = ExtResource("1_k5oya")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6h365"]
+atlas = ExtResource("1_k5oya")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jklnh"]
+atlas = ExtResource("1_k5oya")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1i0c"]
+atlas = ExtResource("1_k5oya")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6n7e5"]
+atlas = ExtResource("1_k5oya")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wl21"]
+atlas = ExtResource("1_k5oya")
+region = Rect2(0, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0xqx"]
+atlas = ExtResource("1_k5oya")
+region = Rect2(0, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uiwsq"]
+atlas = ExtResource("1_k5oya")
+region = Rect2(0, 224, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3mm8k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_si4tx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6h365")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jklnh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1i0c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6n7e5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5wl21")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0xqx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uiwsq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="KillEffect" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_3mm8k")
+script = ExtResource("1_fkvol")
