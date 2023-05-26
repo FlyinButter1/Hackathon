@@ -1,9 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://dl3vlj0ablptg"]
 
-[ext_resource type="Texture2D" uid="uid://6lwguavdxcrv" path="res://zygmunt.png" id="1_q8kst"]
+[ext_resource type="PackedScene" uid="uid://bkui8ocdu3a4w" path="res://Player/player.tscn" id="1_u1ui7"]
 
 [node name="World" type="Node2D"]
 
-[node name="Zygmunt" type="Sprite2D" parent="."]
-position = Vector2(51, 28)
-texture = ExtResource("1_q8kst")
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_u1ui7")]
+position = Vector2(46, 40)
