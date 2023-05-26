@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dl3vlj0ablptg"]
+
+[ext_resource type="Texture2D" uid="uid://6lwguavdxcrv" path="res://zygmunt.png" id="1_q8kst"]
+
+[node name="World" type="Node2D"]
+
+[node name="Zygmunt" type="Sprite2D" parent="."]
+position = Vector2(51, 28)
+texture = ExtResource("1_q8kst")
