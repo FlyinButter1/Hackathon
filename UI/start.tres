@@ -1,0 +1,25 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://c5nw3lt1qknxp"]
+
+[ext_resource type="Texture2D" uid="uid://d1en36hftavv" path="res://UI/Hover.png" id="1_3vpfq"]
+[ext_resource type="Texture2D" uid="uid://d1lkhgwlmfy3i" path="res://UI/Normal.png" id="2_bdv8w"]
+[ext_resource type="Texture2D" uid="uid://dkquyh03knc2" path="res://UI/Pressed.png" id="3_7mp6v"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2lfy2"]
+texture = ExtResource("1_3vpfq")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2u1ww"]
+texture = ExtResource("2_bdv8w")
+region_rect = Rect2(0, 0, 64, 36)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v8fay"]
+texture = ExtResource("3_7mp6v")
+
+[resource]
+Button/colors/icon_focus_color = Color(1, 1, 1, 0)
+Button/colors/icon_hover_color = Color(1, 1, 1, 0)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 0)
+Button/colors/icon_normal_color = Color(1, 1, 1, 0)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 0)
+Button/styles/hover = SubResource("StyleBoxTexture_2lfy2")
+Button/styles/normal = SubResource("StyleBoxTexture_2u1ww")
+Button/styles/pressed = SubResource("StyleBoxTexture_v8fay")
