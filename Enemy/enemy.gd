@@ -26,7 +26,6 @@ var target_position:Vector2
 
 func _physics_process(delta):
 	check_for_player()
-	print(state)
 	match state:
 		CHASE:
 			if PlayerDetectionZone.player != null:
