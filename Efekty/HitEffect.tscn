@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://1m4dyqn4xh6f"]
+[gd_scene load_steps=6 format=3 uid="uid://dpale6cnjudy3"]
 
 [ext_resource type="Texture2D" uid="uid://xxv1mnqrdpwa" path="res://Efekty/HitEffect.png" id="1_5p41j"]
 [ext_resource type="Script" path="res://Efekty/Effect.gd" id="1_imeq4"]
@@ -28,4 +28,6 @@ animations = [{
 [node name="HitEffect" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_x0i52")
 animation = &"Animate"
+frame = 1
+frame_progress = 0.435754
 script = ExtResource("1_imeq4")

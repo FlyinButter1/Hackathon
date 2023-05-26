@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://j0ltr8eeea5u"]
+
+[ext_resource type="Script" path="res://Efekty/Effect.gd" id="1_fkvol"]
+
+[node name="KillEffect" type="AnimatedSprite2D"]
+script = ExtResource("1_fkvol")
