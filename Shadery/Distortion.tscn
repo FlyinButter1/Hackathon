@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://detlrcrn5esqn"]
+
+[ext_resource type="Shader" path="res://Shadery/Distortion.gdshader" id="2_ft5k3"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ak7i4"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bf2gg"]
+noise = SubResource("FastNoiseLite_ak7i4")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1suvx"]
+shader = ExtResource("2_ft5k3")
+shader_parameter/predkosc = 0.1
+shader_parameter/skala = 0.01
+shader_parameter/vector = 1.0
+shader_parameter/noise = SubResource("NoiseTexture2D_bf2gg")
+
+[node name="Distortion" type="ColorRect"]
+material = SubResource("ShaderMaterial_1suvx")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -288.0
+offset_bottom = -148.0
+grow_horizontal = 2
+grow_vertical = 2

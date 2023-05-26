@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1ofss78jrapi"]
+
+[ext_resource type="Shader" path="res://Shadery/Blink.gdshader" id="1_gn5u5"]
+[ext_resource type="Texture2D" uid="uid://6lwguavdxcrv" path="res://zygmunt.png" id="2_l8j8w"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4tpxq"]
+shader = ExtResource("1_gn5u5")
+shader_parameter/active = false
+
+[node name="Sprite2D" type="Sprite2D"]
+material = SubResource("ShaderMaterial_4tpxq")
+position = Vector2(149, 66)
+texture = ExtResource("2_l8j8w")
+hframes = 2
