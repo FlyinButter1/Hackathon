@@ -1,0 +1,149 @@
+[gd_scene load_steps=10 format=3 uid="uid://c0rcvsbw1t7mu"]
+
+[ext_resource type="Script" path="res://UI/Menu.gd" id="1_566qf"]
+[ext_resource type="Texture2D" uid="uid://j5mylt3lme3w" path="res://UI/bg.png" id="2_pyldj"]
+[ext_resource type="Theme" uid="uid://c5nw3lt1qknxp" path="res://UI/start.tres" id="3_24qjc"]
+[ext_resource type="Theme" uid="uid://8iq0ltvk6ms" path="res://UI/quit.tres" id="4_18hsc"]
+[ext_resource type="Texture2D" uid="uid://bqufc3ypo1khe" path="res://UI/logo.png" id="5_jn3x3"]
+
+[sub_resource type="Animation" id="Animation_cyg0v"]
+resource_name = "FadeIn"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7yfar"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_umj8g"]
+resource_name = "FadeOut"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.7),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"fadeoutfinished"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_74jkg"]
+_data = {
+"FadeIn": SubResource("Animation_cyg0v"),
+"FadeOut": SubResource("Animation_umj8g"),
+"RESET": SubResource("Animation_7yfar")
+}
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_566qf")
+metadata/_edit_lock_ = true
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -18.0
+offset_top = -21.0
+offset_right = 348.0
+offset_bottom = 184.0
+texture = ExtResource("2_pyldj")
+metadata/_edit_lock_ = true
+
+[node name="Logo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -107.0
+offset_top = -1.0
+offset_right = 258.0
+offset_bottom = 204.0
+grow_horizontal = 2
+scale = Vector2(0.583831, 0.582214)
+texture = ExtResource("5_jn3x3")
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "FadeIn"
+libraries = {
+"": SubResource("AnimationLibrary_74jkg")
+}
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = 49.0
+offset_right = 32.0
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_18hsc")
+metadata/_edit_lock_ = true
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -29.0
+offset_top = 20.0
+offset_right = 32.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_24qjc")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
