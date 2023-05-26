@@ -13,7 +13,7 @@ config_version=5
 config/name="Hackathon"
 run/main_scene="res://world1.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://UI/logo.png"
 
 [autoload]
 
@@ -55,9 +55,7 @@ move_down={
 }
 attack={
 "deadzone": 0.5,
-
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":70,"key_label":0,"unicode":102,"echo":false,"script":null)
-
 ]
 }
 
