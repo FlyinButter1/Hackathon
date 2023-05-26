@@ -1,28 +1,50 @@
 extends CharacterBody2D
 
+@export var MAX_SPEED = 165
+@export var ACCELERATION = 80
+@export var FRICTION = 150
+@export var ROLL_SPEED = 175
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+@onready var animationTree = $AnimationTree
+@onready var animationTreePlayback = animationTree.get('parameters/playback')
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var input_vector: Vector2 = Vector2.ZERO
 
+var can_attack: bool
+
+enum {
+	ATTACK,
+	ROLL,
+	MOVE
+}
+
+var state = MOVE
 
 func _physics_process(delta):
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y += gravity * delta
+	match state:
+		MOVE:
+			move_state()
+			
 
-	# Handle Jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+func move_state():
+			input_vector.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+			input_vector.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
+			
+			animationTree.set('parameters/Idle/blend_position', input_vector)
+			animationTree.set('parameters/Attack/blend_position', input_vector)
+			animationTree.set('parameters/Run/blend_position', input_vector)
+			animationTree.set('parameters/Roll/blend_position', input_vector)
+			
+			if input_vector != Vector2.ZERO:
+				animationTreePlayback.travel('Run')
+				velocity = velocity.move_toward(input_vector.normalized() * MAX_SPEED, ACCELERATION)
+			else:
+				animationTreePlayback.travel('Idle')
+				velocity = velocity.move_toward(Vector2.ZERO, FRICTION)
+				
+			print(velocity)
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+			move_and_slide()
 
-	move_and_slide()
+
+	

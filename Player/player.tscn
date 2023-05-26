@@ -1,5 +1,71 @@
-[gd_scene format=3 uid="uid://bkui8ocdu3a4w"]
+[gd_scene load_steps=17 format=3 uid="uid://bkui8ocdu3a4w"]
+
+[ext_resource type="Script" path="res://Player/player.gd" id="1_jbwsr"]
+[ext_resource type="Texture2D" uid="uid://c8m7yikcbwn6s" path="res://Player/test.png" id="2_6m36v"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p1wpn"]
+radius = 9.0
+height = 18.0
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_vauna"]
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_rowbn"]
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_a5t3s"]
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_pg5t5"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ufq3y"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2u7pi"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_grlrc"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_uv550"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2ltl8"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_s0joa"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5c0xa"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_6ogkg"]
+states/Attack/node = SubResource("AnimationNodeBlendSpace2D_vauna")
+states/Attack/position = Vector2(369, 123)
+states/Idle/node = SubResource("AnimationNodeBlendSpace2D_rowbn")
+states/Idle/position = Vector2(467, 57)
+states/Roll/node = SubResource("AnimationNodeBlendSpace2D_a5t3s")
+states/Roll/position = Vector2(550, 172)
+states/Run/node = SubResource("AnimationNodeBlendSpace2D_pg5t5")
+states/Run/position = Vector2(595, 57)
+states/Start/position = Vector2(219, 52)
+transitions = ["Idle", "Run", SubResource("AnimationNodeStateMachineTransition_ufq3y"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_2u7pi"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_grlrc"), "Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_uv550"), "Idle", "Roll", SubResource("AnimationNodeStateMachineTransition_2ltl8"), "Roll", "Idle", SubResource("AnimationNodeStateMachineTransition_s0joa"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_5c0xa")]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_w6i7p"]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_jbwsr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_6m36v")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("CapsuleShape2D_p1wpn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_6ogkg")
+anim_player = NodePath("../AnimationPlayer")
+parameters/playback = SubResource("AnimationNodeStateMachinePlayback_w6i7p")
+parameters/Attack/blend_position = Vector2(0, 0)
+parameters/Idle/blend_position = Vector2(0.0144, -0.0419161)
+parameters/Roll/blend_position = Vector2(0, 0)
+parameters/Run/blend_position = Vector2(0, 0)
