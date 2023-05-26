@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d30qm4xs25u4k"
-path="res://.godot/imported/tileset_woda.png-82e722e496b122bee6fc98c7caf26bd6.ctex"
+uid="uid://cd2cy1mqylxlb"
+path="res://.godot/imported/TargRed.png-8cd58f4906aae30de111714786a2a9f6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TileSety/woda/tileset_woda.png"
-dest_files=["res://.godot/imported/tileset_woda.png-82e722e496b122bee6fc98c7caf26bd6.ctex"]
+source_file="res://domki/TargRed.png"
+dest_files=["res://.godot/imported/TargRed.png-8cd58f4906aae30de111714786a2a9f6.ctex"]
 
 [params]
 

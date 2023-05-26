@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dasrw4t5igado"
-path="res://.godot/imported/tileset_borderwoda.png-2eee807d8da2412301ddb623f1a85f7f.ctex"
+uid="uid://bwg2sdrupsqny"
+path="res://.godot/imported/TargGreen.png-cf6916bf7610e2b77b5c8a81bc37e0a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TileSety/borderwoda/tileset_borderwoda.png"
-dest_files=["res://.godot/imported/tileset_borderwoda.png-2eee807d8da2412301ddb623f1a85f7f.ctex"]
+source_file="res://domki/TargGreen.png"
+dest_files=["res://.godot/imported/TargGreen.png-cf6916bf7610e2b77b5c8a81bc37e0a8.ctex"]
 
 [params]
 

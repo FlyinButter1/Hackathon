@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://l30wj46c3nde"
-path="res://.godot/imported/tileset_cobble.png-81f438db8788e47c9824053e99c7814f.ctex"
+uid="uid://bdv3d3u2macie"
+path="res://.godot/imported/tileset_Poprawna Trawa.png-83aa05410d613c40e9c5d937b2cab549.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TileSety/tileset_cobble.png"
-dest_files=["res://.godot/imported/tileset_cobble.png-81f438db8788e47c9824053e99c7814f.ctex"]
+source_file="res://TileSety/tileset_Poprawna Trawa.png"
+dest_files=["res://.godot/imported/tileset_Poprawna Trawa.png-83aa05410d613c40e9c5d937b2cab549.ctex"]
 
 [params]
 

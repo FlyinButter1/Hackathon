@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dri18gy48k1jj"
-path="res://.godot/imported/tileset_trawa.png-ae19dcf267080859f06f5f305b34d5cf.ctex"
+uid="uid://ko0w1m7s36b4"
+path="res://.godot/imported/tileset_path.png-2d66fcbb79df75d05414bda3a3421a44.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TileSety/tileset_trawa.png"
-dest_files=["res://.godot/imported/tileset_trawa.png-ae19dcf267080859f06f5f305b34d5cf.ctex"]
+source_file="res://TileSety/tileset_path.png"
+dest_files=["res://.godot/imported/tileset_path.png-2d66fcbb79df75d05414bda3a3421a44.ctex"]
 
 [params]
 

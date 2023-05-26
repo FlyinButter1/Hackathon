@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cd2cy1mqylxlb"
-path="res://.godot/imported/targ.png-a72d9250a09e66d9c824e1539a7ba996.ctex"
+uid="uid://dd5yf7wya5dh2"
+path="res://.godot/imported/TipiGreen.png-1bc4b1e20d7c61c5757405ef74dfd1f7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://domki/targ.png"
-dest_files=["res://.godot/imported/targ.png-a72d9250a09e66d9c824e1539a7ba996.ctex"]
+source_file="res://domki/TipiGreen.png"
+dest_files=["res://.godot/imported/TipiGreen.png-1bc4b1e20d7c61c5757405ef74dfd1f7.ctex"]
 
 [params]
 

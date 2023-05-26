@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csixgyc2han18"
-path="res://.godot/imported/tileset_sciezka.png-493af1653adf1c61236c0b1bfb0c1f66.ctex"
+uid="uid://bsjs5hbgv11ev"
+path="res://.godot/imported/tileset_roślinki.png-7bd680511026f71140b1a63cadd8fe9a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TileSety/tileset_sciezka.png"
-dest_files=["res://.godot/imported/tileset_sciezka.png-493af1653adf1c61236c0b1bfb0c1f66.ctex"]
+source_file="res://TileSety/roślinki/tileset_roślinki.png"
+dest_files=["res://.godot/imported/tileset_roślinki.png-7bd680511026f71140b1a63cadd8fe9a.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bn748p2cqfegx"
-path="res://.godot/imported/namiot3(1).png-d47cfde6c0d45874a5ba314429c1b83b.ctex"
+path="res://.godot/imported/TipiRed.png-14a6cd06943c53daf1bedefcbe4fd183.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://domki/namiot3(1).png"
-dest_files=["res://.godot/imported/namiot3(1).png-d47cfde6c0d45874a5ba314429c1b83b.ctex"]
+source_file="res://domki/TipiRed.png"
+dest_files=["res://.godot/imported/TipiRed.png-14a6cd06943c53daf1bedefcbe4fd183.ctex"]
 
 [params]
 
