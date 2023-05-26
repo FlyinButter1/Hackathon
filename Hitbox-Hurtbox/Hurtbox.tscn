@@ -1,8 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://dswumttan7gjl"]
+[gd_scene load_steps=4 format=3 uid="uid://dswumttan7gjl"]
 
 [ext_resource type="Script" path="res://Hitbox-Hurtbox/Hurtbox.gd" id="1_7xlv2"]
+[ext_resource type="Shader" path="res://Shadery/Blink.gdshader" id="1_ctdw4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ou38w"]
+shader = ExtResource("1_ctdw4")
+shader_parameter/active = false
 
 [node name="Hurtbox" type="Area2D"]
+material = SubResource("ShaderMaterial_ou38w")
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_7xlv2")

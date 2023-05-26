@@ -7,14 +7,20 @@ signal knockback
 
 @onready var collisionShape = $CollisionShape2D
 @onready var timer = $Timer
+@export var blinkAnimationPlayer :AnimationPlayer
+
+var invincible_state = false
 
 func invincible():
+	invincible_state = true
 	collisionShape.set_deferred('disabled', true)
-	# odpal shader
 	timer.start(invincibility_timer)
+	blinkAnimationPlayer.play('start')
 	await timer.timeout
-	#wylacz shader 
+	blinkAnimationPlayer.play('stop')
+	invincible_state = false
 	collisionShape.set_deferred('disabled', false)
+	
 
 @export var max_health: int :
 	set(value):
