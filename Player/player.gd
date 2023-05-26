@@ -10,6 +10,10 @@ extends CharacterBody2D
 @onready var hitbox = $Hitbox
 var input_vector: Vector2 = Vector2.ZERO
 
+func _input(event):
+	if event.is_action_pressed("ui_accept"):
+		DialogueManager.show_example_dialogue_balloon(load("res://Dialogue/test.dialogue"))
+
 var can_attack: bool
 
 enum {

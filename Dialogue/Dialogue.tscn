@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwsmaygoo5xov"]
+
+[ext_resource type="Texture2D" uid="uid://d4cl3v6qsafor" path="res://Dialogue/dialogue.png" id="1_l5p4f"]
+[ext_resource type="Script" path="res://Dialogue/dialogue.gd" id="1_nnp48"]
+[ext_resource type="FontFile" uid="uid://g7slabsvlqap" path="res://Dialogue/LanaPixel.ttf" id="2_i4iiy"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_nnp48")
+file_path = "res://Dialogue/json/test.json"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -110.0
+offset_top = -78.0
+offset_right = 111.0
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_l5p4f")
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 40.0
+offset_bottom = 39.0
+expand_mode = 1
+
+[node name="name" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 3.0
+offset_right = 215.0
+offset_bottom = 11.0
+theme_override_colors/default_color = Color(0.835294, 0.835294, 0.835294, 1)
+theme_override_fonts/normal_font = ExtResource("2_i4iiy")
+theme_override_font_sizes/normal_font_size = 11
+text = "name"
+scroll_active = false
+
+[node name="text" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 13.0
+offset_right = 211.0
+offset_bottom = 35.0
+theme_override_fonts/normal_font = ExtResource("2_i4iiy")
+theme_override_font_sizes/normal_font_size = 7
+text = "text"
