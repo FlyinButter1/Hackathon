@@ -7,7 +7,7 @@ extends CharacterBody2D
 
 @onready var animationTree = $AnimationTree
 @onready var animationTreePlayback = animationTree.get('parameters/playback')
-
+@onready var hitbox = $Hitbox
 var input_vector: Vector2 = Vector2.ZERO
 
 var can_attack: bool
@@ -30,21 +30,29 @@ func move_state():
 			input_vector.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 			input_vector.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 			
-			animationTree.set('parameters/Idle/blend_position', input_vector)
-			animationTree.set('parameters/Attack/blend_position', input_vector)
-			animationTree.set('parameters/Run/blend_position', input_vector)
-			animationTree.set('parameters/Roll/blend_position', input_vector)
-			
 			if input_vector != Vector2.ZERO:
+				animationTree.set('parameters/Idle/blend_position', input_vector)
+				animationTree.set('parameters/Attack/blend_position', input_vector)
+				animationTree.set('parameters/Run/blend_position', input_vector)
+				animationTree.set('parameters/Roll/blend_position', input_vector)
+				hitbox.knockback_vector = input_vector.normalized()
 				animationTreePlayback.travel('Run')
 				velocity = velocity.move_toward(input_vector.normalized() * MAX_SPEED, ACCELERATION)
 			else:
 				animationTreePlayback.travel('Idle')
 				velocity = velocity.move_toward(Vector2.ZERO, FRICTION)
 				
-			print(velocity)
 
 			move_and_slide()
 
 
 	
+
+
+func _on_hurtbox_death():
+	#umieranie effekty / animacje
+	queue_free()
+
+
+func _on_hurtbox_knockback(knockback_value, knockback_vector):
+	velocity += knockback_vector * knockback_value
