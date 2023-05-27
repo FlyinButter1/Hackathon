@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://by2va8qd01rk3"]
+
+[ext_resource type="Script" path="res://HeartsUi.gd" id="1_41msh"]
+[ext_resource type="Texture2D" uid="uid://d032p57rv6ldu" path="res://UI/heartempty.png" id="2_dekjg"]
+[ext_resource type="Texture2D" uid="uid://ct21ucoi5nxs7" path="res://UI/heartfull.png" id="3_fclnf"]
+
+[node name="HeartsUi" type="CanvasLayer"]
+script = ExtResource("1_41msh")
+
+[node name="MaxHearts" type="TextureRect" parent="."]
+offset_right = 64.0
+offset_bottom = 16.0
+texture = ExtResource("2_dekjg")
+stretch_mode = 1
+
+[node name="Hearts" type="TextureRect" parent="."]
+offset_right = 64.0
+offset_bottom = 16.0
+texture = ExtResource("3_fclnf")
+stretch_mode = 1
