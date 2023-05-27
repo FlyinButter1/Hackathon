@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://l1804ghq7yi6"]
+[gd_scene load_steps=23 format=3 uid="uid://l1804ghq7yi6"]
 
 [ext_resource type="PackedScene" uid="uid://2s863k2tne0" path="res://worldProps/world_1_tileset.tscn" id="1_ak2l4"]
 [ext_resource type="PackedScene" uid="uid://blwfndsdc4hdx" path="res://worldProps/TileSetyWorld2/TileMapa.tscn" id="2_bqjfg"]
@@ -6,15 +6,14 @@
 [ext_resource type="TileSet" uid="uid://btqxqpgxrrgvb" path="res://worldProps/szymon tilesety/roślinki/tileset_roślinki.tres" id="4_md15o"]
 [ext_resource type="Texture2D" uid="uid://budprenlbaso3" path="res://worldProps/bridge.png" id="5_ttccs"]
 [ext_resource type="Texture2D" uid="uid://b3jcfjjog17q6" path="res://worldProps/domki/smiecLozko1.png" id="6_wjijh"]
+[ext_resource type="Texture2D" uid="uid://dsrh6gixqojgu" path="res://worldProps/domki/smiecNamiot1.png" id="7_wkye5"]
 [ext_resource type="Texture2D" uid="uid://cwemu3tcb4rew" path="res://worldProps/nowa wioska/grzyb1.png" id="8_84dix"]
 [ext_resource type="Texture2D" uid="uid://cbln8rqgt33yb" path="res://worldProps/nowa wioska/grzyb2.png" id="9_gx4rm"]
 [ext_resource type="Texture2D" uid="uid://bwbvus0iynwth" path="res://worldProps/nowa wioska/marchewki.png" id="10_767kw"]
 [ext_resource type="Texture2D" uid="uid://bmqf4wryqmciu" path="res://worldProps/nowa wioska/pomidoryi.png" id="11_s537e"]
 [ext_resource type="Texture2D" uid="uid://cyhrkl703mt3w" path="res://worldProps/nowa wioska/smietnik.png" id="12_hcb02"]
 [ext_resource type="Texture2D" uid="uid://x5qr24fig3ss" path="res://worldProps/nowa wioska/warzywa..png" id="13_xc5l3"]
-[ext_resource type="Texture2D" uid="uid://dwwrof0ybmo0c" path="res://worldProps/nowa wioska/namiotnowy1..png" id="14_04ael"]
 [ext_resource type="Texture2D" uid="uid://bil7fdydhnon3" path="res://worldProps/nowa wioska/warzywa.png" id="14_h6m7k"]
-[ext_resource type="Texture2D" uid="uid://cew3v8dqgklpp" path="res://worldProps/nowa wioska/namiotnowy2..png" id="15_1syfc"]
 [ext_resource type="Texture2D" uid="uid://3cafb0qxg1ud" path="res://worldProps/nowa wioska/parasol.png" id="15_mk35e"]
 [ext_resource type="PackedScene" uid="uid://bkui8ocdu3a4w" path="res://Player/player.tscn" id="16_5cygm"]
 [ext_resource type="PackedScene" uid="uid://3q7vlw45ws4k" path="res://Player/camera_2d.tscn" id="17_urn2y"]
@@ -44,8 +43,8 @@ sources/1 = SubResource("TileSetAtlasSource_jrrlt")
 size = Vector2(148, 200)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ej0tn"]
-radius = 17.0
-height = 72.0
+radius = 12.0
+height = 90.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pmhj5"]
 radius = 6.0
@@ -236,31 +235,15 @@ position = Vector2(-132, -170)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("12_hcb02")
 
-[node name="Grzyb7" type="Sprite2D" parent="Syf"]
-position = Vector2(-453, -89)
-texture = ExtResource("8_84dix")
-
-[node name="Grzyb8" type="Sprite2D" parent="Syf"]
-position = Vector2(-284, 53)
-texture = ExtResource("9_gx4rm")
-
-[node name="Grzyb9" type="Sprite2D" parent="Syf"]
-position = Vector2(-148, -319)
-texture = ExtResource("8_84dix")
-
-[node name="Grzyb10" type="Sprite2D" parent="Syf"]
-position = Vector2(-612, 20)
-texture = ExtResource("9_gx4rm")
-
 [node name="Namiot1" type="StaticBody2D" parent="."]
 
 [node name="SmiecNamiot1" type="Sprite2D" parent="Namiot1"]
 position = Vector2(-197, -205)
 scale = Vector2(3, 3)
-texture = ExtResource("14_04ael")
+texture = ExtResource("7_wkye5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Namiot1"]
-position = Vector2(-198, -177)
+position = Vector2(-198, -171)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_ej0tn")
 
@@ -269,10 +252,10 @@ shape = SubResource("CapsuleShape2D_ej0tn")
 [node name="SmiecNamiot4" type="Sprite2D" parent="Namiot2"]
 position = Vector2(-131, -91)
 scale = Vector2(3, 3)
-texture = ExtResource("15_1syfc")
+texture = ExtResource("7_wkye5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Namiot2"]
-position = Vector2(-132, -60)
+position = Vector2(-131, -56)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_ej0tn")
 
@@ -288,29 +271,9 @@ position = Vector2(-347, -116)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_pmhj5")
 
-[node name="Namiot3" type="StaticBody2D" parent="."]
+[node name="CharacterBody2D" parent="." instance=ExtResource("16_5cygm")]
 
-[node name="SmiecNamiot1" type="Sprite2D" parent="Namiot3"]
-position = Vector2(-379, -264)
-scale = Vector2(3, 3)
-texture = ExtResource("15_1syfc")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Namiot3"]
-position = Vector2(-378, -240)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_ej0tn")
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D"]
+remote_path = NodePath("../../../Camera2D")
 
 [node name="Camera2D" parent="." instance=ExtResource("17_urn2y")]
-position = Vector2(70, 1)
-
-[node name="Marker2D1" parent="Camera2D" index="0"]
-position = Vector2(-915, -514)
-
-[node name="Marker2D2" parent="Camera2D" index="1"]
-position = Vector2(1569, 763)
-
-[node name="CharacterBody2D" parent="." node_paths=PackedStringArray("Camera") instance=ExtResource("16_5cygm")]
-position = Vector2(70, 1)
-Camera = NodePath("../Camera2D")
-
-[editable path="Camera2D"]
