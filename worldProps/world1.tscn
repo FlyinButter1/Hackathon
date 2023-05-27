@@ -1,14 +1,14 @@
-[gd_scene load_steps=27 format=3 uid="uid://cwneuag01ycnv"]
+[gd_scene load_steps=28 format=3 uid="uid://cwneuag01ycnv"]
 
-[ext_resource type="PackedScene" path="res://SceneChanger.tscn" id="1_ssxy0"]
+[ext_resource type="PackedScene" uid="uid://defwrtm565285" path="res://SceneChanger.tscn" id="1_ssxy0"]
 [ext_resource type="PackedScene" uid="uid://2s863k2tne0" path="res://worldProps/world_1_tileset.tscn" id="2_47dgp"]
 [ext_resource type="PackedScene" uid="uid://blwfndsdc4hdx" path="res://worldProps/TileSetyWorld2/TileMapa.tscn" id="3_ffpge"]
 [ext_resource type="PackedScene" uid="uid://bkui8ocdu3a4w" path="res://Player/player.tscn" id="4_1k0bs"]
-[ext_resource type="Texture2D" uid="uid://cc4yddgwo2nhn" path="res://worldProps/szymon tilesety/tileset_additions.png" id="4_xbfou"]
+[ext_resource type="Texture2D" uid="uid://cc4yddgwo2nhn" path="res://worldProps/TileSetyWorld2/tileset_additions.png" id="4_xbfou"]
 [ext_resource type="PackedScene" uid="uid://n5vbb5rr3hvr" path="res://Npc/npc.tscn" id="5_r148f"]
 [ext_resource type="PackedScene" uid="uid://cwsmaygoo5xov" path="res://Dialogue/Dialogue.tscn" id="6_bwsf4"]
 [ext_resource type="TileSet" uid="uid://btqxqpgxrrgvb" path="res://worldProps/szymon tilesety/roślinki/tileset_roślinki.tres" id="8_fqokw"]
-[ext_resource type="PackedScene" uid="uid://3q7vlw45ws4k" path="res://Player/camera_2d.tscn" id="9_lunw8"]
+[ext_resource type="PackedScene" path="res://Player/camera_2d.tscn" id="9_lunw8"]
 [ext_resource type="Texture2D" uid="uid://dd5yf7wya5dh2" path="res://worldProps/domki/TipiGreen.png" id="10_7vogi"]
 [ext_resource type="Texture2D" uid="uid://cvf54332v8uhj" path="res://worldProps/domki/TipiYellow.png" id="11_n6o41"]
 [ext_resource type="Texture2D" uid="uid://bn748p2cqfegx" path="res://worldProps/domki/TipiRed.png" id="12_swre0"]
@@ -61,6 +61,20 @@ height = 21.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cxjr0"]
 radius = 3.0
+
+[sub_resource type="Environment" id="Environment_cmj6l"]
+background_mode = 3
+glow_enabled = true
+glow_levels/1 = 1.0
+glow_levels/5 = 0.0
+glow_levels/6 = 1.0
+glow_levels/7 = 1.0
+glow_strength = 1.1
+glow_blend_mode = 1
+glow_hdr_threshold = 0.7
+adjustment_enabled = true
+adjustment_contrast = 1.2
+adjustment_saturation = 0.8
 
 [node name="World1" type="Node2D"]
 
@@ -221,6 +235,9 @@ texture = ExtResource("17_ihq30")
 [node name="Most" type="Sprite2D" parent="."]
 position = Vector2(79, -486)
 texture = ExtResource("18_akb3o")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_cmj6l")
 
 [editable path="ysort/npc"]
 [editable path="ysort/npc2"]
