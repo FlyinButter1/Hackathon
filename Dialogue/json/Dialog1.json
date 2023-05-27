@@ -1,0 +1,7 @@
+[
+	{"name": "Piotr", "text": "Właśnie podłączyliśmy kanalizację do rury prowadzącej do rzeki. Ułatwia nam to pozbywanie się ścieków.", "img": "res://Dialogue/dialogue.png"},
+	{"name": "Chomicz", "text": "Nie myślicie o tym, że będzie to niszczyć naszą okolice i prowadzić do dalszych zanieczyszczeń?","img": "res://Dialogue/dialogue.png" },
+	{"name": "Piotr", "text": "Chyba sobie żartujesz? Już od dawna śmieci wyrzucamy po okolicy i nic się nie dzieje.", "img": "res://Dialogue/dialogue.png"},
+	{"name": "Chomicz", "text": "Ehhhh... Nigdy nie zrozumiemy naszych błędów.", "img": "res://Dialogue/dialogue.png"},
+	{"name": "Piotr", "text": "Nazywasz oszczędzanie naszego czasu i energii błędem?", "img": "res://Dialogue/dialogue.png"},
+]

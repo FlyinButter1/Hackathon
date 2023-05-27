@@ -1,0 +1,5 @@
+[
+	{"name": "Chomicz", "text": "Bożydar! Nic ci się nie stało?","img": "res://Dialogue/dialogue.png" },
+	{"name": "Bożydar", "text": "Chyba nie. Jestem w stanie chodzić.", "img": "res://Dialogue/dialogue.png"},
+	{"name": "Chomicz", "text": "Jakie szczęście! Wrócmy do wioski.", "img": "res://Dialogue/dialogue.png"},
+]
