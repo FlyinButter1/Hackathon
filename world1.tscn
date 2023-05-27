@@ -1,4 +1,5 @@
-[gd_scene load_steps=7 format=3 uid="uid://dl3vlj0ablptg"]
+[gd_scene load_steps=6 format=3 uid="uid://dl3vlj0ablptg"]
+
 
 
 [ext_resource type="PackedScene" uid="uid://2s863k2tne0" path="res://tilesety/World1/world_1_tileset.tscn" id="1_84cqi"]
@@ -9,11 +10,17 @@
 [ext_resource type="PackedScene" uid="uid://cwsmaygoo5xov" path="res://Dialogue/Dialogue.tscn" id="4_awg78"]
 
 [node name="World" type="Node2D"]
-script = ExtResource("1_qm7je")
 
-[node name="World1" parent="." instance=ExtResource("1_84cqi")]
 
-[node name="ysort" type="Node2D" parent="."]
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_u1ui7")]
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D"]
+remote_path = NodePath("../../Camera2D")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(2, 3)
+navigation_polygon = SubResource("NavigationPolygon_un8ev")
+
 
 [node name="CharacterBody2D" parent="ysort" instance=ExtResource("1_u1ui7")]
 visible = false
@@ -36,5 +43,7 @@ position = Vector2(692, 398)
 [editable path="ysort/npc"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+limit_smoothed = true
+position_smoothing_enabled = true
 
 
