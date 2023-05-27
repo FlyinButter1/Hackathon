@@ -571,6 +571,8 @@ disabled = true
 
 [node name="InteractionPlayer" parent="." instance=ExtResource("5_bqhsh")]
 
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+
 [connection signal="death" from="Hurtbox" to="." method="_on_hurtbox_death"]
 [connection signal="knockback" from="Hurtbox" to="." method="_on_hurtbox_knockback"]
 

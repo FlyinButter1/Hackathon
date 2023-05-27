@@ -1,12 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://dl3vlj0ablptg"]
+[gd_scene load_steps=7 format=3 uid="uid://dl3vlj0ablptg"]
+
 
 [ext_resource type="PackedScene" uid="uid://2s863k2tne0" path="res://tilesety/World1/world_1_tileset.tscn" id="1_84cqi"]
+
 [ext_resource type="PackedScene" uid="uid://bkui8ocdu3a4w" path="res://Player/player.tscn" id="1_u1ui7"]
 [ext_resource type="PackedScene" uid="uid://b7txius5yit3r" path="res://Enemy/test_enemy.tscn" id="2_wpegm"]
 [ext_resource type="PackedScene" uid="uid://n5vbb5rr3hvr" path="res://Npc/npc.tscn" id="3_tpoys"]
 [ext_resource type="PackedScene" uid="uid://cwsmaygoo5xov" path="res://Dialogue/Dialogue.tscn" id="4_awg78"]
 
 [node name="World" type="Node2D"]
+script = ExtResource("1_qm7je")
 
 [node name="World1" parent="." instance=ExtResource("1_84cqi")]
 
@@ -29,4 +32,9 @@ DialogueHandler = NodePath("../DialogueHandler")
 visible = false
 position = Vector2(692, 398)
 
+
 [editable path="ysort/npc"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+
