@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cwneuag01ycnv"]
+[gd_scene load_steps=48 format=3 uid="uid://cwneuag01ycnv"]
 
 [ext_resource type="PackedScene" path="res://SceneChanger.tscn" id="1_ssxy0"]
 [ext_resource type="PackedScene" uid="uid://2s863k2tne0" path="res://worldProps/world_1_tileset.tscn" id="2_47dgp"]
@@ -8,8 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://n5vbb5rr3hvr" path="res://Npc/npc.tscn" id="5_r148f"]
 [ext_resource type="PackedScene" uid="uid://cwsmaygoo5xov" path="res://Dialogue/Dialogue.tscn" id="6_bwsf4"]
 [ext_resource type="TileSet" uid="uid://btqxqpgxrrgvb" path="res://worldProps/szymon tilesety/roślinki/tileset_roślinki.tres" id="8_fqokw"]
+[ext_resource type="Texture2D" uid="uid://bd485c6bs03o2" path="res://Npc/tuxedo.png" id="8_gp836"]
+[ext_resource type="Texture2D" uid="uid://bfuulwwd8goh6" path="res://Npc/emo.png" id="9_cdkdk"]
 [ext_resource type="PackedScene" uid="uid://3q7vlw45ws4k" path="res://Player/camera_2d.tscn" id="9_lunw8"]
 [ext_resource type="Texture2D" uid="uid://dd5yf7wya5dh2" path="res://worldProps/domki/TipiGreen.png" id="10_7vogi"]
+[ext_resource type="Texture2D" uid="uid://courpoxen88vh" path="res://Npc/rudy.png" id="10_nmrqa"]
+[ext_resource type="Texture2D" uid="uid://27vm4g5r088x" path="res://Npc/bobo.png" id="11_kfrqo"]
 [ext_resource type="Texture2D" uid="uid://cvf54332v8uhj" path="res://worldProps/domki/TipiYellow.png" id="11_n6o41"]
 [ext_resource type="Texture2D" uid="uid://bn748p2cqfegx" path="res://worldProps/domki/TipiRed.png" id="12_swre0"]
 [ext_resource type="Texture2D" uid="uid://cd2cy1mqylxlb" path="res://worldProps/domki/TargRed.png" id="13_cas5j"]
@@ -43,6 +47,94 @@ texture_region_size = Vector2i(8, 8)
 sources/1 = SubResource("TileSetAtlasSource_jrrlt")
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_p2i2n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wocv"]
+atlas = ExtResource("8_gp836")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdcs2"]
+atlas = ExtResource("8_gp836")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kxmek"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6wocv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdcs2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.5
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rg8h5"]
+atlas = ExtResource("9_cdkdk")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kncdn"]
+atlas = ExtResource("9_cdkdk")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_akikp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rg8h5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kncdn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.5
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7c3o"]
+atlas = ExtResource("10_nmrqa")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6ghr"]
+atlas = ExtResource("10_nmrqa")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4mrap"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7c3o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6ghr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kbfki"]
+atlas = ExtResource("11_kfrqo")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_323ou"]
+atlas = ExtResource("11_kfrqo")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cohb7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kbfki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_323ou")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.5
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i6vb6"]
 radius = 5.0
@@ -109,28 +201,56 @@ Camera = NodePath("../../Camera2D")
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_p2i2n")
 
 [node name="npc" parent="ysort" instance=ExtResource("5_r148f")]
-position = Vector2(73, 33)
+position = Vector2(-360, -132)
 
-[node name="InteractionListener" parent="ysort/npc" index="1" node_paths=PackedStringArray("DialogueHandler")]
+[node name="InteractionListener" parent="ysort/npc" index="0" node_paths=PackedStringArray("DialogueHandler")]
 DialogueHandler = NodePath("../DialogueHandler")
 
 [node name="DialogueHandler" parent="ysort/npc" instance=ExtResource("6_bwsf4")]
+file_path = "res://Dialogue/json/Dialog1.json"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ysort/npc"]
+sprite_frames = SubResource("SpriteFrames_kxmek")
+autoplay = "default"
 
 [node name="npc2" parent="ysort" instance=ExtResource("5_r148f")]
-position = Vector2(-111, -192)
+position = Vector2(-123, -188)
 
-[node name="InteractionListener" parent="ysort/npc2" index="1" node_paths=PackedStringArray("DialogueHandler")]
+[node name="InteractionListener" parent="ysort/npc2" index="0" node_paths=PackedStringArray("DialogueHandler")]
 DialogueHandler = NodePath("../DialogueHandler")
 
 [node name="DialogueHandler" parent="ysort/npc2" instance=ExtResource("6_bwsf4")]
+file_path = "res://Dialogue/json/Dialog2.json"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ysort/npc2"]
+sprite_frames = SubResource("SpriteFrames_akikp")
+autoplay = "default"
+frame_progress = 0.680193
 
 [node name="npc3" parent="ysort" instance=ExtResource("5_r148f")]
-position = Vector2(175, -72)
+position = Vector2(52, -154)
 
-[node name="InteractionListener" parent="ysort/npc3" index="1" node_paths=PackedStringArray("DialogueHandler")]
+[node name="InteractionListener" parent="ysort/npc3" index="0" node_paths=PackedStringArray("DialogueHandler")]
 DialogueHandler = NodePath("../DialogueHandler")
 
 [node name="DialogueHandler" parent="ysort/npc3" instance=ExtResource("6_bwsf4")]
+file_path = "res://Dialogue/json/Dialog3.json"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ysort/npc3"]
+sprite_frames = SubResource("SpriteFrames_4mrap")
+
+[node name="npc4" parent="ysort" instance=ExtResource("5_r148f")]
+position = Vector2(-652, -251)
+
+[node name="InteractionListener" parent="ysort/npc4" index="0" node_paths=PackedStringArray("DialogueHandler")]
+DialogueHandler = NodePath("../DialogueHandler")
+
+[node name="DialogueHandler" parent="ysort/npc4" instance=ExtResource("6_bwsf4")]
+file_path = "res://Dialogue/json/Dialog4.json"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ysort/npc4"]
+sprite_frames = SubResource("SpriteFrames_cohb7")
+autoplay = "default"
 
 [node name="rosliny" type="TileMap" parent="ysort"]
 tile_set = ExtResource("8_fqokw")
@@ -271,4 +391,5 @@ shape = SubResource("CapsuleShape2D_vcatw")
 [editable path="ysort/npc"]
 [editable path="ysort/npc2"]
 [editable path="ysort/npc3"]
+[editable path="ysort/npc4"]
 [editable path="Camera2D"]
