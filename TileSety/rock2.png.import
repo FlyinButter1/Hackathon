@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdv3d3u2macie"
-path="res://.godot/imported/tileset_Poprawna Trawa.png-83aa05410d613c40e9c5d937b2cab549.ctex"
+uid="uid://chxcm4ffcq5iv"
+path="res://.godot/imported/rock2.png-cc85e2dca3bbcb1c47035f206ec0d489.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TileSety/tileset_Poprawna Trawa.png"
-dest_files=["res://.godot/imported/tileset_Poprawna Trawa.png-83aa05410d613c40e9c5d937b2cab549.ctex"]
+source_file="res://TileSety/rock2.png"
+dest_files=["res://.godot/imported/rock2.png-cc85e2dca3bbcb1c47035f206ec0d489.ctex"]
 
 [params]
 

@@ -1,14 +1,45 @@
-[gd_scene load_steps=17 format=3 uid="uid://3i0mclas0h6m"]
+[gd_scene load_steps=14 format=3 uid="uid://3i0mclas0h6m"]
 
-[ext_resource type="Texture2D" uid="uid://bdv3d3u2macie" path="res://TileSety/tileset_Poprawna Trawa.png" id="2_0lhnl"]
-[ext_resource type="Texture2D" uid="uid://bsjs5hbgv11ev" path="res://TileSety/roślinki/tileset_roślinki.png" id="3_m66b1"]
-[ext_resource type="Texture2D" uid="uid://ko0w1m7s36b4" path="res://TileSety/tileset_path.png" id="3_s428f"]
-[ext_resource type="Texture2D" uid="uid://bwg2sdrupsqny" path="res://domki/TargGreen.png" id="5_ptas4"]
-[ext_resource type="Texture2D" uid="uid://dtdvwgfhu5w5k" path="res://TileSety/water.png" id="6_4yg2m"]
-[ext_resource type="Texture2D" uid="uid://cd2cy1mqylxlb" path="res://domki/TargRed.png" id="6_hqaqp"]
-[ext_resource type="Texture2D" uid="uid://dd5yf7wya5dh2" path="res://domki/TipiGreen.png" id="7_12xxj"]
-[ext_resource type="Texture2D" uid="uid://cvf54332v8uhj" path="res://domki/TipiYellow.png" id="8_ti33w"]
-[ext_resource type="Texture2D" uid="uid://bn748p2cqfegx" path="res://domki/TipiRed.png" id="9_eonl2"]
+[ext_resource type="Texture2D" uid="uid://cc4yddgwo2nhn" path="res://TileSety/Additions/additions/tileset_additions.png" id="1_soeia"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0lu73"]
+texture = ExtResource("1_soeia")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrain = 5
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/terrain = 5
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/terrain = 5
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+3:0/0 = 0
+3:0/0/terrain_set = 0
+3:0/0/terrain = 5
+3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_0/angular_velocity = 0.0
+4:0/0 = 0
+4:0/0/terrain_set = 0
+4:0/0/terrain = 5
+4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:0/0/physics_layer_0/angular_velocity = 0.0
+5:0/0 = 0
+5:0/0/terrain_set = 0
+5:0/0/terrain = 5
+5:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:0/0/physics_layer_0/angular_velocity = 0.0
+6:0/0 = 0
+6:0/0/terrain_set = 0
+6:0/0/terrain = 5
+6:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_eoach"]
 load_path = "res://.godot/imported/tileset_woda.png-82e722e496b122bee6fc98c7caf26bd6.ctex"
@@ -431,8 +462,11 @@ texture_region_size = Vector2i(32, 32)
 8:4/0/terrains_peering_bit/left_side = 3
 8:4/0/terrains_peering_bit/top_side = 3
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7ga4q"]
+load_path = "res://.godot/imported/tileset_roślinki.png-7bd680511026f71140b1a63cadd8fe9a.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ui7x6"]
-texture = ExtResource("3_m66b1")
+texture = SubResource("CompressedTexture2D_7ga4q")
 texture_region_size = Vector2i(64, 64)
 0:0/size_in_atlas = Vector2i(1, 2)
 0:0/0 = 0
@@ -452,8 +486,11 @@ texture_region_size = Vector2i(64, 64)
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(29.5, 0.5, 24.5, 9, -6.5, 8.5, -25, 7, -30, 1, -5.5, -0.5, 11.5, 0.5)
 1:1/0/terrains_peering_bit/top_side = 4
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m25lv"]
+load_path = "res://.godot/imported/tileset_Poprawna Trawa.png-83aa05410d613c40e9c5d937b2cab549.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fw5eb"]
-texture = ExtResource("2_0lhnl")
+texture = SubResource("CompressedTexture2D_m25lv")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/terrain_set = 0
@@ -894,8 +931,11 @@ texture_region_size = Vector2i(32, 32)
 8:4/0/terrains_peering_bit/left_side = 0
 8:4/0/terrains_peering_bit/top_side = 0
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_si2kn"]
+load_path = "res://.godot/imported/tileset_path.png-2d66fcbb79df75d05414bda3a3421a44.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3eoct"]
-texture = ExtResource("3_s428f")
+texture = SubResource("CompressedTexture2D_si2kn")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/terrain_set = 0
@@ -1321,8 +1361,11 @@ texture_region_size = Vector2i(32, 32)
 8:4/0/terrains_peering_bit/left_side = 1
 8:4/0/terrains_peering_bit/top_side = 1
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ip1u3"]
+load_path = "res://.godot/imported/water.png-b020a933d1c60f9663baf620b0194c29.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hgdq3"]
-texture = ExtResource("6_4yg2m")
+texture = SubResource("CompressedTexture2D_ip1u3")
 texture_region_size = Vector2i(32, 32)
 0:0/animation_columns = 2
 0:0/animation_frame_0/duration = 1.0
@@ -1348,11 +1391,14 @@ terrain_set_0/terrain_3/name = "Trawa>Woda"
 terrain_set_0/terrain_3/color = Color(1, 1, 1, 1)
 terrain_set_0/terrain_4/name = "Miscenalous"
 terrain_set_0/terrain_4/color = Color(1, 1, 1, 1)
+terrain_set_0/terrain_5/name = "Additional"
+terrain_set_0/terrain_5/color = Color(1, 1, 1, 1)
 sources/9 = SubResource("TileSetAtlasSource_hgdq3")
 sources/10 = SubResource("TileSetAtlasSource_um4gh")
 sources/13 = SubResource("TileSetAtlasSource_ui7x6")
 sources/16 = SubResource("TileSetAtlasSource_fw5eb")
 sources/17 = SubResource("TileSetAtlasSource_3eoct")
+sources/0 = SubResource("TileSetAtlasSource_0lu73")
 
 [node name="TileMap" type="TileMap"]
 tile_set = SubResource("TileSet_pnuiv")
@@ -1375,28 +1421,3 @@ layer_2/y_sort_origin = 0
 layer_2/z_index = 0
 layer_2/tile_data = PackedInt32Array(655362, 13, 0, -327673, 13, 0, -196598, 13, 0, -262133, 13, 0, -393211, 13, 0, -393204, 13, 0, -393203, 13, 0, -393199, 13, 0, -327662, 13, 0, -327660, 13, 0, -327658, 13, 0, -196587, 13, 0, -131049, 13, 0, -327677, 13, 0, -393216, 13, 0, -262143, 13, 0, -196609, 13, 0, -327683, 13, 0, -262146, 13, 0, -196612, 13, 0, -262149, 13, 0, -327687, 13, 0, -196615, 13, 0, -262153, 13, 0, -327691, 13, 0, -196618, 13, 0, -327693, 13, 0, -196620, 13, 0, -196622, 13, 0, -262140, 13, 0, -262138, 13, 0, -196606, 13, 0, -131067, 65549, 1, -262132, 65549, 1, -196608, 65549, 1, -131075, 65549, 1, -131078, 65549, 1, -262152, 65549, 1, -262125, 65549, 1, -65514, 65549, 1, -196588, 65549, 1, -131085, 65549, 1, -196619, 65549, 1, -196617, 65549, 1, 262164, 65549, 1, 458763, 65549, 1, 6, 65549, 1, 655366, 65549, 1, 393225, 13, 0)
 metadata/_edit_horizontal_guides_ = []
-
-[node name="TargGreen" type="Sprite2D" parent="."]
-position = Vector2(319, 64)
-scale = Vector2(2, 2)
-texture = ExtResource("5_ptas4")
-
-[node name="TipiGreen" type="Sprite2D" parent="."]
-position = Vector2(187, 45)
-scale = Vector2(3, 3)
-texture = ExtResource("7_12xxj")
-
-[node name="TargRed" type="Sprite2D" parent="."]
-position = Vector2(194, 193)
-scale = Vector2(2, 2)
-texture = ExtResource("6_hqaqp")
-
-[node name="TipiYellow" type="Sprite2D" parent="."]
-position = Vector2(25, 49)
-scale = Vector2(3, 3)
-texture = ExtResource("8_ti33w")
-
-[node name="TipiRed2" type="Sprite2D" parent="."]
-position = Vector2(111, 50)
-scale = Vector2(3, 3)
-texture = ExtResource("9_eonl2")

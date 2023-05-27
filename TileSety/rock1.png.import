@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqjhojlgsqr7i"
-path="res://.godot/imported/waterborder1.png-0f0e48897c097359d5a4b44a8644abd8.ctex"
+uid="uid://of7wj83dd8x1"
+path="res://.godot/imported/rock1.png-e3b012e4065e3e7118012b37420e94b4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TileSety/waterborder1.png"
-dest_files=["res://.godot/imported/waterborder1.png-0f0e48897c097359d5a4b44a8644abd8.ctex"]
+source_file="res://TileSety/rock1.png"
+dest_files=["res://.godot/imported/rock1.png-e3b012e4065e3e7118012b37420e94b4.ctex"]
 
 [params]
 
