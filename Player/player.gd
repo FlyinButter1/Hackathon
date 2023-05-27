@@ -7,6 +7,7 @@ extends CharacterBody2D
 @onready var animationTree = $AnimationTree
 @onready var animationTreePlayback = animationTree.get('parameters/playback')
 @onready var hitbox = $HitboxAnchor/Hitbox
+@onready var remoteTransform2D = $RemoteTransform2D
 var input_vector: Vector2 = Vector2.ZERO
 
 func _input(event):
@@ -71,3 +72,7 @@ func _on_hurtbox_death():
 
 func _on_hurtbox_knockback(knockback_value, knockback_vector):
 	velocity += knockback_vector * knockback_value
+
+func connect_camera(camera):
+	var camera_path = camera.get_path()
+	remoteTransform2D.remote_path = camera_path
