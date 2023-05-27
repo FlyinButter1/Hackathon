@@ -1,5 +1,4 @@
 extends CharacterBody2D
-class_name Enemy
 
 @export_category("move")
 @export var MAX_SPEED = 50
@@ -81,3 +80,10 @@ func state_coolodown_end():
 
 func _on_hurtbox_knockback(knckback_value, knockback_vector):
 	velocity += knockback_vector * knckback_value
+
+var DeathEffectScene = preload("res://Efekty/KillEffect.tscn") 
+func _on_hurtbox_death():
+	var DeathEffect = DeathEffectScene.instantiate()
+	self.get_parent().add_child(DeathEffect)
+	DeathEffect.global_position = global_position
+	queue_free()

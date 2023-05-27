@@ -28,6 +28,5 @@ animations = [{
 [node name="HitEffect" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_x0i52")
 animation = &"Animate"
-frame = 1
-frame_progress = 0.435754
+autoplay = "Animate"
 script = ExtResource("1_imeq4")

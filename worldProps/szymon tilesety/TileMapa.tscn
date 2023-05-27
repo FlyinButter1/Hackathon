@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://blwfndsdc4hdx"]
 
-[ext_resource type="Texture2D" uid="uid://bownnswnqn8mf" path="res://worldProps/szymon tilesety/tileset_path.png" id="1_8xbyx"]
-[ext_resource type="Texture2D" uid="uid://cq6j2enm2k46g" path="res://worldProps/szymon tilesety/tileset_Poprawna Trawa.png" id="2_immkf"]
-[ext_resource type="Texture2D" uid="uid://cc4yddgwo2nhn" path="res://worldProps/szymon tilesety/tileset_additions.png" id="4_gsktn"]
+[ext_resource type="Texture2D" uid="uid://bownnswnqn8mf" path="res://worldProps/TileSetyWorld2/tileset_path.png" id="1_8xbyx"]
+[ext_resource type="Texture2D" uid="uid://cq6j2enm2k46g" path="res://worldProps/TileSetyWorld2/tileset_Poprawna Trawa.png" id="2_immkf"]
+[ext_resource type="Texture2D" uid="uid://cc4yddgwo2nhn" path="res://worldProps/TileSetyWorld2/tileset_additions.png" id="4_gsktn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w7poo"]
 texture = ExtResource("1_8xbyx")

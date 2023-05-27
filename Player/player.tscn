@@ -544,7 +544,7 @@ material = SubResource("ShaderMaterial_orisd")
 texture = ExtResource("2_jnltd")
 hframes = 12
 vframes = 13
-frame = 144
+frame = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -584,7 +584,7 @@ rotation = 1.5708
 [node name="Hitbox" parent="HitboxAnchor" instance=ExtResource("4_hdhjl")]
 collision_layer = 0
 collision_mask = 16
-knockback_value = 100.0
+knockback_value = 10.0
 
 [node name="CollisionShape2D" parent="HitboxAnchor/Hitbox" index="0"]
 position = Vector2(22, 0)

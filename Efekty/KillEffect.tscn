@@ -62,11 +62,12 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_uiwsq")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 10.0
 }]
 
 [node name="KillEffect" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_3mm8k")
+autoplay = "default"
 script = ExtResource("1_fkvol")
