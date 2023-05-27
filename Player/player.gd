@@ -4,6 +4,8 @@ extends CharacterBody2D
 @export var ACCELERATION = 50
 @export var FRICTION = 100
 
+@export var Camera :Camera2D
+
 @onready var animationTree = $AnimationTree
 @onready var animationTreePlayback = animationTree.get('parameters/playback')
 @onready var hitbox = $HitboxAnchor/Hitbox
@@ -27,6 +29,8 @@ var state = MOVE
 
 func _ready():
 	randomize()
+	$RemoteTransform2D.remote_path = Camera.get_path()
+	
 
 func _physics_process(delta):
 	if is_blocked:
@@ -72,3 +76,7 @@ func _on_hurtbox_death():
 func _on_hurtbox_knockback(knockback_value, knockback_vector):
 	velocity += knockback_vector * knockback_value
 
+
+
+func _on_hurtbox_max_health_changed():
+	pass # Replace with function body.

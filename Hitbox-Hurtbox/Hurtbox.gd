@@ -30,10 +30,11 @@ func invincible():
 @export var invincibility_timer : float
 
 
-var health :
+
+var health:int :
 	set(value):
 		health = clamp(value, 0, max_health)
-		emit_signal('health_changed', value)
+		emit_signal('health_changed', health)
 
 func damage(damage):
 	self.health -= damage
