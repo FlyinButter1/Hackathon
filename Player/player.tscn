@@ -1,10 +1,19 @@
-[gd_scene load_steps=45 format=3 uid="uid://bkui8ocdu3a4w"]
+[gd_scene load_steps=51 format=3 uid="uid://bkui8ocdu3a4w"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_jbwsr"]
+[ext_resource type="Shader" path="res://Shadery/Blink.gdshader" id="1_sjmi0"]
 [ext_resource type="Texture2D" uid="uid://xsx3uonb5lm" path="res://Player/playerChomik.png" id="2_jnltd"]
 [ext_resource type="PackedScene" uid="uid://dswumttan7gjl" path="res://Hitbox-Hurtbox/Hurtbox.tscn" id="3_t0dfo"]
 [ext_resource type="PackedScene" uid="uid://dsbk8g1cfmjp8" path="res://Hitbox-Hurtbox/Hitbox.tscn" id="4_hdhjl"]
 [ext_resource type="PackedScene" uid="uid://biauw0vuovpnb" path="res://Npc/InteractionPlayer.tscn" id="5_bqhsh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_whbas"]
+shader = ExtResource("1_sjmi0")
+shader_parameter/active = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gv8y2"]
+shader = ExtResource("1_sjmi0")
+shader_parameter/active = false
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p1wpn"]
 radius = 6.0
@@ -517,11 +526,53 @@ height = 18.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ycbry"]
 radius = 7.0
 
+[sub_resource type="Animation" id="Animation_hsl2c"]
+resource_name = "start"
+length = 0.3
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/active")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_smvn4"]
+resource_name = "stop"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/active")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jvqwb"]
+_data = {
+"start": SubResource("Animation_hsl2c"),
+"stop": SubResource("Animation_smvn4")
+}
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
+material = SubResource("ShaderMaterial_whbas")
 collision_layer = 2
 script = ExtResource("1_jbwsr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_gv8y2")
 texture = ExtResource("2_jnltd")
 hframes = 12
 vframes = 13
@@ -546,9 +597,10 @@ parameters/Attack/blend_position = Vector2(-0.488, -0.326316)
 parameters/Idle/blend_position = Vector2(0.00320005, 0.104979)
 parameters/Run/blend_position = Vector2(-0.00160003, 0.461905)
 
-[node name="Hurtbox" parent="." instance=ExtResource("3_t0dfo")]
+[node name="Hurtbox" parent="." node_paths=PackedStringArray("blinkAnimationPlayer") instance=ExtResource("3_t0dfo")]
 collision_layer = 8
-max_health = 3
+blinkAnimationPlayer = NodePath("../Blink")
+max_health = 4
 invincibility_timer = 1.5
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
@@ -570,6 +622,13 @@ shape = SubResource("CapsuleShape2D_ycbry")
 disabled = true
 
 [node name="InteractionPlayer" parent="." instance=ExtResource("5_bqhsh")]
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+
+[node name="Blink" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jvqwb")
+}
 
 [connection signal="death" from="Hurtbox" to="." method="_on_hurtbox_death"]
 [connection signal="knockback" from="Hurtbox" to="." method="_on_hurtbox_knockback"]

@@ -9,4 +9,4 @@ func change_scene(next_scene_path):
 	next_scene = next_scene_path
 
 func fadeOutFinished():
-	get_tree().change.change_scene_to_file(next_scene)
+	get_tree().change_scene_to_file(next_scene)
