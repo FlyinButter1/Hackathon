@@ -73,6 +73,3 @@ func _on_hurtbox_death():
 func _on_hurtbox_knockback(knockback_value, knockback_vector):
 	velocity += knockback_vector * knockback_value
 
-func connect_camera(camera):
-	var camera_path = camera.get_path()
-	remoteTransform2D.remote_path = camera_path

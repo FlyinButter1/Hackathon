@@ -1,6 +1,5 @@
-[gd_scene load_steps=7 format=3 uid="uid://dl3vlj0ablptg"]
+[gd_scene load_steps=6 format=3 uid="uid://dl3vlj0ablptg"]
 
-[ext_resource type="Script" path="res://World1.gd" id="1_qm7je"]
 [ext_resource type="PackedScene" uid="uid://bkui8ocdu3a4w" path="res://Player/player.tscn" id="1_u1ui7"]
 [ext_resource type="PackedScene" uid="uid://b7txius5yit3r" path="res://Enemy/test_enemy.tscn" id="2_wpegm"]
 [ext_resource type="PackedScene" uid="uid://n5vbb5rr3hvr" path="res://Npc/npc.tscn" id="3_tpoys"]
@@ -12,12 +11,14 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6), Packe
 outlines = Array[PackedVector2Array]([PackedVector2Array(107, -17, 24, 12, 10, 113, 53, 205, 202, 195, 318, 159, 352, 61, 255, 5, 201, 2)])
 
 [node name="World" type="Node2D"]
-script = ExtResource("1_qm7je")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_u1ui7")]
-position = Vector2(46, 40)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D"]
+remote_path = NodePath("../../Camera2D")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(2, 3)
 navigation_polygon = SubResource("NavigationPolygon_un8ev")
 
 [node name="TestEnemy" parent="." instance=ExtResource("2_wpegm")]
@@ -32,5 +33,7 @@ DialogueHandler = NodePath("../DialogueHandler")
 [node name="DialogueHandler" parent="npc" instance=ExtResource("4_awg78")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+limit_smoothed = true
+position_smoothing_enabled = true
 
 [editable path="npc"]
