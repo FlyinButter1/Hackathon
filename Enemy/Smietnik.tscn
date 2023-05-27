@@ -77,8 +77,8 @@ tracks/0/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_m5d84"]
-resource_name = "IdleUp"
+[sub_resource type="Animation" id="Animation_7n1jv"]
+resource_name = "IdleLeft"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -89,7 +89,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [1]
+"values": [3]
 }
 
 [sub_resource type="Animation" id="Animation_4hpij"]
@@ -107,8 +107,8 @@ tracks/0/keys = {
 "values": [2]
 }
 
-[sub_resource type="Animation" id="Animation_7n1jv"]
-resource_name = "IdleLeft"
+[sub_resource type="Animation" id="Animation_m5d84"]
+resource_name = "IdleUp"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -119,7 +119,22 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [3]
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_8a64u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [12]
 }
 
 [sub_resource type="Animation" id="Animation_nlqvt"]
@@ -139,23 +154,8 @@ tracks/0/keys = {
 "values": [4, 12]
 }
 
-[sub_resource type="Animation" id="Animation_8a64u"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [12]
-}
-
-[sub_resource type="Animation" id="Animation_1qcok"]
-resource_name = "RunUp"
+[sub_resource type="Animation" id="Animation_yf67a"]
+resource_name = "RunLeft"
 length = 0.2
 loop_mode = 1
 tracks/0/type = "value"
@@ -168,7 +168,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [5, 13]
+"values": [7, 15]
 }
 
 [sub_resource type="Animation" id="Animation_2s6dg"]
@@ -188,8 +188,8 @@ tracks/0/keys = {
 "values": [6, 14]
 }
 
-[sub_resource type="Animation" id="Animation_yf67a"]
-resource_name = "RunLeft"
+[sub_resource type="Animation" id="Animation_1qcok"]
+resource_name = "RunUp"
 length = 0.2
 loop_mode = 1
 tracks/0/type = "value"
@@ -202,7 +202,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [7, 15]
+"values": [5, 13]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_872bw"]
@@ -349,6 +349,7 @@ parameters/playback = SubResource("AnimationNodeStateMachinePlayback_ko3wm")
 parameters/Idle/blend_position = Vector2(0.0576, -0.552402)
 parameters/Run/blend_position = Vector2(-0.0752, 0.523581)
 
+[connection signal="death" from="Hurtbox" to="." method="_on_hurtbox_death"]
 [connection signal="knockback" from="Hurtbox" to="." method="_on_hurtbox_knockback"]
 
 [editable path="Hitbox"]

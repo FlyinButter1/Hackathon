@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://l1804ghq7yi6"]
+[gd_scene load_steps=24 format=3 uid="uid://bxo028tm7ob8x"]
 
 [ext_resource type="PackedScene" uid="uid://2s863k2tne0" path="res://worldProps/world_1_tileset.tscn" id="1_ak2l4"]
 [ext_resource type="PackedScene" uid="uid://blwfndsdc4hdx" path="res://worldProps/TileSetyWorld2/TileMapa.tscn" id="2_bqjfg"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://3cafb0qxg1ud" path="res://worldProps/nowa wioska/parasol.png" id="15_mk35e"]
 [ext_resource type="PackedScene" uid="uid://bkui8ocdu3a4w" path="res://Player/player.tscn" id="16_5cygm"]
 [ext_resource type="PackedScene" uid="uid://3q7vlw45ws4k" path="res://Player/camera_2d.tscn" id="17_urn2y"]
+[ext_resource type="PackedScene" uid="uid://defwrtm565285" path="res://SceneChanger.tscn" id="18_3gdkn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jrrlt"]
 texture = ExtResource("3_uuwr0")
@@ -271,9 +272,12 @@ position = Vector2(-347, -116)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_pmhj5")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("16_5cygm")]
+[node name="CharacterBody2D" parent="." node_paths=PackedStringArray("Camera") instance=ExtResource("16_5cygm")]
+Camera = NodePath("../Camera2D")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D"]
 remote_path = NodePath("../../../Camera2D")
 
 [node name="Camera2D" parent="." instance=ExtResource("17_urn2y")]
+
+[node name="SceneChanger" parent="." instance=ExtResource("18_3gdkn")]

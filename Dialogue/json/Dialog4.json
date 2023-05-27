@@ -1,6 +1,6 @@
 [
-	{"name": "Grusznik", "text": "Uwielbiam jeść gruszki.", "img": "res://Dialogue/dialogue.png"},
-	{"name": "Chomicz", "text": "Co?","img": "res://Dialogue/dialogue.png" },
-	{"name": "Grusznik", "text": "A potem wyrzucać ogryzki.", "img": "res://Dialogue/dialogue.png"},
-	{"name": "Chomicz", "text": "Ciekawe hobby.", "img": "res://Dialogue/dialogue.png"},
+	{"name": "Grusznik", "text": "Uwielbiam jeść gruszki.", "img": "res://Npc/portrety/portraitbobo.png"},
+	{"name": "Chomicz", "text": "Co?","img": "res://Npc/portrety/portraitchomicz.png" },
+	{"name": "Grusznik", "text": "A potem wyrzucać ogryzki.", "img": "res://Npc/portrety/portraitbobo.png"},
+	{"name": "Chomicz", "text": "Ciekawe hobby.", "img": "res://Npc/portrety/portraitchomicz.png"},
 ]

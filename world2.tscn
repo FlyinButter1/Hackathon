@@ -1,7 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://by1g5mux2ikqg"]
+[gd_scene load_steps=17 format=3 uid="uid://by1g5mux2ikqg"]
 
 [ext_resource type="PackedScene" uid="uid://blwfndsdc4hdx" path="res://worldProps/TileSetyWorld2/TileMapa.tscn" id="1_58w5m"]
-[ext_resource type="Texture2D" uid="uid://6lwguavdxcrv" path="res://zygmunt.png" id="1_q8kst"]
 [ext_resource type="PackedScene" uid="uid://3q7vlw45ws4k" path="res://Player/camera_2d.tscn" id="3_rbhle"]
 [ext_resource type="Texture2D" uid="uid://6kkxc10w7pkh" path="res://worldProps/smieci/smieci1.png" id="4_xceku"]
 [ext_resource type="Texture2D" uid="uid://da3pr6fnqswl" path="res://worldProps/smieci/smieci2.png" id="5_toxem"]
@@ -10,7 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://b7txius5yit3r" path="res://Enemy/Grucha.tscn" id="7_opuon"]
 [ext_resource type="PackedScene" uid="uid://dog7hvo1ohgrr" path="res://Enemy/Smietnik.tscn" id="8_efld5"]
 [ext_resource type="PackedScene" uid="uid://defwrtm565285" path="res://SceneChanger.tscn" id="9_xtgb6"]
+[ext_resource type="Texture2D" uid="uid://dihh55w0e015u" path="res://Npc/ziom.png" id="11_ln4am"]
 [ext_resource type="PackedScene" uid="uid://dxrug7r2rdekk" path="res://HealthUi.tscn" id="11_o7r73"]
+[ext_resource type="Script" path="res://world2SceneChange.gd" id="12_b5y8d"]
 
 [sub_resource type="Environment" id="Environment_5q7rn"]
 background_mode = 3
@@ -31,11 +32,11 @@ vertices = PackedVector2Array(530, 102, 599, 172, -54, 193, -56, -4519, 498, -20
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(0, 2, 3, 4), PackedInt32Array(5, 6, 4, 3, 7), PackedInt32Array(8, 7, 3), PackedInt32Array(9, 10, 11, 8, 3, 12, 13, 14, 15)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(599, 172, -54, 193, -56, -4519, 173, -4604, 357, -4606, 556, -4576, 718, -4538, 762, -4460, 773, -4276, 773, -4129, 743, -3305, 749, -2214, 759, -1273, 700, -637, 498, -203, 530, 102)])
 
-[node name="World" type="Node2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fnpxx"]
+radius = 51.0
+height = 120.0
 
-[node name="Zygmunt" type="Sprite2D" parent="."]
-position = Vector2(34, 166)
-texture = ExtResource("1_q8kst")
+[node name="World" type="Node2D"]
 
 [node name="TileMap" parent="." instance=ExtResource("1_58w5m")]
 position = Vector2(27, -136)
@@ -86,7 +87,7 @@ position = Vector2(609, -1812)
 texture = ExtResource("6_blqdi")
 
 [node name="CharacterBody2D" parent="SpriteŚmiecie" node_paths=PackedStringArray("Camera") instance=ExtResource("6_64gsl")]
-position = Vector2(195, -69)
+position = Vector2(193, -143)
 Camera = NodePath("../../Camera2D")
 
 [node name="AnimationTree" parent="SpriteŚmiecie/CharacterBody2D" index="3"]
@@ -182,8 +183,23 @@ navigation_polygon = SubResource("NavigationPolygon_u6dk2")
 
 [node name="Control" parent="CanvasLayer2" instance=ExtResource("11_o7r73")]
 
+[node name="ziom" type="Sprite2D" parent="."]
+position = Vector2(345, -4567)
+texture = ExtResource("11_ln4am")
+
+[node name="Area2D" type="Area2D" parent="ziom"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("12_b5y8d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ziom/Area2D"]
+shape = SubResource("CapsuleShape2D_fnpxx")
+
+[node name="SceneChanger" parent="." instance=ExtResource("9_xtgb6")]
+
 [connection signal="health_changed" from="SpriteŚmiecie/CharacterBody2D/Hurtbox" to="CanvasLayer2/Control" method="_on_hurtbox_health_changed"]
 [connection signal="max_health_changed" from="SpriteŚmiecie/CharacterBody2D/Hurtbox" to="CanvasLayer2/Control" method="_on_hurtbox_max_health_changed"]
+[connection signal="body_entered" from="ziom/Area2D" to="ziom/Area2D" method="_on_body_entered"]
 
 [editable path="SpriteŚmiecie/CharacterBody2D"]
 [editable path="SpriteŚmiecie/CharacterBody2D/Hurtbox"]

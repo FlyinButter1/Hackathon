@@ -1,5 +1,5 @@
 [
-	{"name": "Świętopełk", "text": "Zostaw mnie w spokoju.", "img": "res://Dialogue/dialogue.png"},
-	{"name": "Chomicz", "text": "Może otworzylibyśmy się na siebie, nawet się nie poznaliśmy, sąsiedzie,","img": "res://Dialogue/dialogue.png" },
-	{"name": "Świętopełk", "text": "Zostaw. Mnie. W. Spokoju.", "img": "res://Dialogue/dialogue.png"},
+	{"name": "Świętopełk", "text": "Zostaw mnie w spokoju.", "img": "res://Npc/portrety/portraitemos.png"},
+	{"name": "Chomicz", "text": "Może otworzylibyśmy się na siebie, nawet się nie poznaliśmy, sąsiedzie,","img": "res://Npc/portrety/portraitchomicz.png" },
+	{"name": "Świętopełk", "text": "Zostaw. Mnie. W. Spokoju.", "img": "res://Npc/portrety/portraitemos.png"},
 ]
