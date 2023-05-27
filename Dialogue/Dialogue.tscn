@@ -4,7 +4,8 @@
 [ext_resource type="Script" path="res://Dialogue/dialogue.gd" id="1_nnp48"]
 [ext_resource type="FontFile" uid="uid://g7slabsvlqap" path="res://Dialogue/LanaPixel.ttf" id="2_i4iiy"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="DialogueHandler" type="CanvasLayer"]
+visible = false
 script = ExtResource("1_nnp48")
 file_path = "res://Dialogue/json/test.json"
 
@@ -15,9 +16,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -110.0
-offset_top = -78.0
+offset_top = -50.0
 offset_right = 111.0
-offset_bottom = -38.0
+offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("1_l5p4f")
@@ -51,3 +52,5 @@ offset_bottom = 35.0
 theme_override_fonts/normal_font = ExtResource("2_i4iiy")
 theme_override_font_sizes/normal_font_size = 7
 text = "text"
+
+[connection signal="gui_input" from="NinePatchRect" to="." method="_on_nine_patch_rect_gui_input"]

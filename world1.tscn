@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dl3vlj0ablptg"]
+[gd_scene load_steps=6 format=3 uid="uid://dl3vlj0ablptg"]
 
 [ext_resource type="PackedScene" uid="uid://bkui8ocdu3a4w" path="res://Player/player.tscn" id="1_u1ui7"]
 [ext_resource type="PackedScene" uid="uid://b7txius5yit3r" path="res://Enemy/test_enemy.tscn" id="2_wpegm"]
+[ext_resource type="PackedScene" uid="uid://n5vbb5rr3hvr" path="res://Npc/npc.tscn" id="3_tpoys"]
+[ext_resource type="PackedScene" uid="uid://cwsmaygoo5xov" path="res://Dialogue/Dialogue.tscn" id="4_awg78"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_un8ev"]
 vertices = PackedVector2Array(201, 2, 255, 5, 352, 61, 318, 159, 202, 195, 53, 205, 10, 113, 107, -17, 24, 12)
@@ -17,4 +19,14 @@ position = Vector2(46, 40)
 navigation_polygon = SubResource("NavigationPolygon_un8ev")
 
 [node name="TestEnemy" parent="." instance=ExtResource("2_wpegm")]
-position = Vector2(197, 90)
+position = Vector2(377, 128)
+
+[node name="npc" parent="." instance=ExtResource("3_tpoys")]
+position = Vector2(27, 123)
+
+[node name="InteractionListener" parent="npc" index="1" node_paths=PackedStringArray("DialogueHandler")]
+DialogueHandler = NodePath("../DialogueHandler")
+
+[node name="DialogueHandler" parent="npc" instance=ExtResource("4_awg78")]
+
+[editable path="npc"]
