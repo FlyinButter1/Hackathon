@@ -22,4 +22,5 @@ func _on_area_exited(area):
 	listen = false
 	
 func dialogue_ended():
-	player.is_blocked = false
+	if player != null:
+		player.is_blocked = false

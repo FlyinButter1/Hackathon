@@ -1,0 +1,24 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://btqxqpgxrrgvb"]
+
+[ext_resource type="Texture2D" uid="uid://bsjs5hbgv11ev" path="res://worldProps/szymon tilesety/roślinki/tileset_roślinki.png" id="1"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0aa7m"]
+texture = ExtResource("1")
+texture_region_size = Vector2i(32, 32)
+0:0/size_in_atlas = Vector2i(2, 4)
+0:0/0 = 0
+0:0/0/y_sort_origin = 35
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.5, 58, 9.5, 58, 8, 49, -14, 48)
+2:2/size_in_atlas = Vector2i(2, 2)
+2:2/0 = 0
+2:2/0/y_sort_origin = 15
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, 8, -18.5, 8, -21.5, 16.5, -21, 21.5, -9.5, 23, 1, 23.5, 10.5, 23, 16, 21, 18.5, 20, 19, 10, 13.5, 7.5, 2.5, 8.5)
+
+[resource]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/12 = SubResource("TileSetAtlasSource_0aa7m")

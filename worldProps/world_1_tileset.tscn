@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://2s863k2tne0"]
 
-[ext_resource type="TileSet" uid="uid://cjfmdr0ott5d" path="res://tilesety/World1/woda_world1.tres" id="1_hhvi5"]
+[ext_resource type="TileSet" uid="uid://cjfmdr0ott5d" path="res://worldProps/woda_world1.tres" id="1_hhvi5"]
 
 [node name="World1" type="TileMap"]
 tile_set = ExtResource("1_hhvi5")

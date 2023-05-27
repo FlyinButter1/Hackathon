@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://3q7vlw45ws4k"]
+
+[ext_resource type="Script" path="res://Player/camera_2d.gd" id="1_iwoon"]
+
+[node name="Camera2D" type="Camera2D"]
+limit_smoothed = true
+position_smoothing_enabled = true
+script = ExtResource("1_iwoon")
+
+[node name="Marker2D1" type="Marker2D" parent="."]
+position = Vector2(-160, -91)
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(161, 90)
