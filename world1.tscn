@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dl3vlj0ablptg"]
 
-[ext_resource type="TileSet" uid="uid://cjfmdr0ott5d" path="res://tilesety/World1/woda_world1.tres" id="1_rkkik"]
+[ext_resource type="PackedScene" uid="uid://2s863k2tne0" path="res://tilesety/World1/world_1_tileset.tscn" id="1_84cqi"]
 [ext_resource type="PackedScene" uid="uid://bkui8ocdu3a4w" path="res://Player/player.tscn" id="1_u1ui7"]
 [ext_resource type="PackedScene" uid="uid://b7txius5yit3r" path="res://Enemy/test_enemy.tscn" id="2_wpegm"]
 [ext_resource type="PackedScene" uid="uid://n5vbb5rr3hvr" path="res://Npc/npc.tscn" id="3_tpoys"]
@@ -8,9 +8,7 @@
 
 [node name="World" type="Node2D"]
 
-[node name="World1" type="TileMap" parent="."]
-tile_set = ExtResource("1_rkkik")
-format = 2
+[node name="World1" parent="." instance=ExtResource("1_84cqi")]
 
 [node name="ysort" type="Node2D" parent="."]
 
