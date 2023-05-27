@@ -1,14 +1,23 @@
-[gd_scene load_steps=12 format=3 uid="uid://cwneuag01ycnv"]
+[gd_scene load_steps=27 format=3 uid="uid://cwneuag01ycnv"]
 
-[ext_resource type="PackedScene" uid="uid://defwrtm565285" path="res://SceneChanger.tscn" id="1_ssxy0"]
+[ext_resource type="PackedScene" path="res://SceneChanger.tscn" id="1_ssxy0"]
 [ext_resource type="PackedScene" uid="uid://2s863k2tne0" path="res://worldProps/world_1_tileset.tscn" id="2_47dgp"]
-[ext_resource type="PackedScene" uid="uid://blwfndsdc4hdx" path="res://worldProps/szymon tilesety/TileMapa.tscn" id="3_ffpge"]
+[ext_resource type="PackedScene" uid="uid://blwfndsdc4hdx" path="res://worldProps/TileSetyWorld2/TileMapa.tscn" id="3_ffpge"]
 [ext_resource type="PackedScene" uid="uid://bkui8ocdu3a4w" path="res://Player/player.tscn" id="4_1k0bs"]
 [ext_resource type="Texture2D" uid="uid://cc4yddgwo2nhn" path="res://worldProps/szymon tilesety/tileset_additions.png" id="4_xbfou"]
 [ext_resource type="PackedScene" uid="uid://n5vbb5rr3hvr" path="res://Npc/npc.tscn" id="5_r148f"]
 [ext_resource type="PackedScene" uid="uid://cwsmaygoo5xov" path="res://Dialogue/Dialogue.tscn" id="6_bwsf4"]
 [ext_resource type="TileSet" uid="uid://btqxqpgxrrgvb" path="res://worldProps/szymon tilesety/roślinki/tileset_roślinki.tres" id="8_fqokw"]
 [ext_resource type="PackedScene" uid="uid://3q7vlw45ws4k" path="res://Player/camera_2d.tscn" id="9_lunw8"]
+[ext_resource type="Texture2D" uid="uid://dd5yf7wya5dh2" path="res://worldProps/domki/TipiGreen.png" id="10_7vogi"]
+[ext_resource type="Texture2D" uid="uid://cvf54332v8uhj" path="res://worldProps/domki/TipiYellow.png" id="11_n6o41"]
+[ext_resource type="Texture2D" uid="uid://bn748p2cqfegx" path="res://worldProps/domki/TipiRed.png" id="12_swre0"]
+[ext_resource type="Texture2D" uid="uid://cd2cy1mqylxlb" path="res://worldProps/domki/TargRed.png" id="13_cas5j"]
+[ext_resource type="Texture2D" uid="uid://bwg2sdrupsqny" path="res://worldProps/domki/TargGreen.png" id="14_2lw31"]
+[ext_resource type="Texture2D" uid="uid://6kkxc10w7pkh" path="res://worldProps/smieci/smieci1.png" id="15_ctao5"]
+[ext_resource type="Texture2D" uid="uid://da3pr6fnqswl" path="res://worldProps/smieci/smieci2.png" id="16_rrj53"]
+[ext_resource type="Texture2D" uid="uid://dyikkqwnnaf4y" path="res://worldProps/smieci/smieci3.png" id="17_ihq30"]
+[ext_resource type="Texture2D" uid="uid://budprenlbaso3" path="res://worldProps/bridge.png" id="18_akb3o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jrrlt"]
 texture = ExtResource("4_xbfou")
@@ -30,6 +39,28 @@ texture_region_size = Vector2i(8, 8)
 
 [sub_resource type="TileSet" id="TileSet_68kim"]
 sources/1 = SubResource("TileSetAtlasSource_jrrlt")
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i6vb6"]
+radius = 5.0
+height = 21.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e5xp6"]
+radius = 5.0
+height = 21.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_53cdt"]
+radius = 5.0
+height = 21.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ev5mk"]
+radius = 3.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qruu8"]
+radius = 5.0
+height = 21.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cxjr0"]
+radius = 3.0
 
 [node name="World1" type="Node2D"]
 
@@ -72,7 +103,7 @@ DialogueHandler = NodePath("../DialogueHandler")
 [node name="DialogueHandler" parent="ysort/npc2" instance=ExtResource("6_bwsf4")]
 
 [node name="npc3" parent="ysort" instance=ExtResource("5_r148f")]
-position = Vector2(-291, 32)
+position = Vector2(175, -72)
 
 [node name="InteractionListener" parent="ysort/npc3" index="1" node_paths=PackedStringArray("DialogueHandler")]
 DialogueHandler = NodePath("../DialogueHandler")
@@ -96,6 +127,100 @@ position = Vector2(1585, 778)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WorldBorder"]
 polygon = PackedVector2Array(-907, -528, -921, 780, 1587, 780, 1591, -613, 1188, -627, 593, -538, -868, -577, -932, -577, -918, -631, -618, -695, -119, -734, 201, -720, 739, -748, 1206, -763, 1623, -795, 1805, -638, 1862, 39, 1890, 506, 1830, 805, 1456, 855, 1049, 877, 397, 869, -45, 862, -583, 884, -1153, 862, -1292, 353, -1217, -296, -1178, -609, -1025, -542)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-377, -272)
+scale = Vector2(3, 3)
+collision_mask = 2
+
+[node name="TipiGreen" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("10_7vogi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 11)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_i6vb6")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(-216, -207)
+scale = Vector2(3, 3)
+collision_mask = 2
+
+[node name="TipiYellow" type="Sprite2D" parent="StaticBody2D2"]
+texture = ExtResource("11_n6o41")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(0, 11)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_e5xp6")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(-588, -304)
+scale = Vector2(3, 3)
+collision_mask = 2
+
+[node name="TipiRed" type="Sprite2D" parent="StaticBody2D3"]
+texture = ExtResource("12_swre0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(0, 11)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_53cdt")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(-525, -279)
+scale = Vector2(1.5, 1.5)
+collision_mask = 2
+
+[node name="TargRed" type="Sprite2D" parent="StaticBody2D4"]
+texture = ExtResource("13_cas5j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(0, 13)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ev5mk")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+position = Vector2(-460, -303)
+scale = Vector2(3, 3)
+collision_mask = 2
+
+[node name="TipiYellow2" type="Sprite2D" parent="StaticBody2D5"]
+texture = ExtResource("11_n6o41")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(0, 11)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_qruu8")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="."]
+position = Vector2(-307, -245)
+scale = Vector2(1.5, 1.5)
+collision_mask = 2
+
+[node name="TargGreen" type="Sprite2D" parent="StaticBody2D6"]
+texture = ExtResource("14_2lw31")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
+position = Vector2(0, 13)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_cxjr0")
+
+[node name="Smieci1" type="Sprite2D" parent="."]
+position = Vector2(-311, -225)
+texture = ExtResource("15_ctao5")
+
+[node name="Smieci2" type="Sprite2D" parent="."]
+position = Vector2(-420, -207)
+texture = ExtResource("16_rrj53")
+
+[node name="Smieci3" type="Sprite2D" parent="."]
+position = Vector2(-529, -248)
+texture = ExtResource("17_ihq30")
+
+[node name="Most" type="Sprite2D" parent="."]
+position = Vector2(79, -486)
+texture = ExtResource("18_akb3o")
 
 [editable path="ysort/npc"]
 [editable path="ysort/npc2"]

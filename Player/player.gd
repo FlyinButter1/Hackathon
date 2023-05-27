@@ -38,7 +38,6 @@ func _physics_process(delta):
 			attack_state()
 
 func move_state():
-	print('move')
 	input_vector.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	input_vector.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	
