@@ -12,7 +12,9 @@ class_name Enemy
 @export var PlayerDetectionZone: Area2D
 @export var navigationAgent: NavigationAgent2D
 
-
+@onready var animationTree = $AnimationTree
+@onready var animationTreePlayback = animationTree.get('parameters/playback')
+@onready var hitbox = $Hitbox
 enum {
 	CHASE,
 	WANDER,
@@ -44,7 +46,11 @@ func idle_state():
 	
 func accelerate_to_point():
 	navigationAgent.target_position = target_position
-	velocity = velocity.move_toward(global_position.direction_to(navigationAgent.get_next_path_position()) * MAX_SPEED, ACCELERATION)
+	var direction_vector = global_position.direction_to(navigationAgent.get_next_path_position()).normalized()
+	animationTree.set('parameters/Idle/blend_position', input_vector)
+	animationTree.set('parameters/Run/blend_position', input_vector)
+	hitbox.knockback_vector = direction_vector
+	velocity = velocity.move_toward(direction_vector * MAX_SPEED, ACCELERATION)
 
 func check_for_player():
 	if PlayerDetectionZone.player != null:
