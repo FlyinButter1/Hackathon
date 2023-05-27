@@ -7,3 +7,4 @@ func _ready():
 	limit_bottom = $Marker2D2.global_position.y
 	limit_right = $Marker2D2.global_position.x
 	
+	
