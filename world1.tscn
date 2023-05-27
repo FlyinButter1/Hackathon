@@ -1,32 +1,34 @@
 [gd_scene load_steps=6 format=3 uid="uid://dl3vlj0ablptg"]
 
+[ext_resource type="TileSet" uid="uid://cjfmdr0ott5d" path="res://tilesety/World1/woda_world1.tres" id="1_rkkik"]
 [ext_resource type="PackedScene" uid="uid://bkui8ocdu3a4w" path="res://Player/player.tscn" id="1_u1ui7"]
 [ext_resource type="PackedScene" uid="uid://b7txius5yit3r" path="res://Enemy/test_enemy.tscn" id="2_wpegm"]
 [ext_resource type="PackedScene" uid="uid://n5vbb5rr3hvr" path="res://Npc/npc.tscn" id="3_tpoys"]
 [ext_resource type="PackedScene" uid="uid://cwsmaygoo5xov" path="res://Dialogue/Dialogue.tscn" id="4_awg78"]
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_un8ev"]
-vertices = PackedVector2Array(201, 2, 255, 5, 352, 61, 318, 159, 202, 195, 53, 205, 10, 113, 107, -17, 24, 12)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6), PackedInt32Array(7, 0, 6, 8)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(107, -17, 24, 12, 10, 113, 53, 205, 202, 195, 318, 159, 352, 61, 255, 5, 201, 2)])
-
 [node name="World" type="Node2D"]
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_u1ui7")]
+[node name="World1" type="TileMap" parent="."]
+tile_set = ExtResource("1_rkkik")
+format = 2
+
+[node name="ysort" type="Node2D" parent="."]
+
+[node name="CharacterBody2D" parent="ysort" instance=ExtResource("1_u1ui7")]
+visible = false
 position = Vector2(46, 40)
 
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-navigation_polygon = SubResource("NavigationPolygon_un8ev")
-
-[node name="TestEnemy" parent="." instance=ExtResource("2_wpegm")]
-position = Vector2(377, 128)
-
-[node name="npc" parent="." instance=ExtResource("3_tpoys")]
+[node name="npc" parent="ysort" instance=ExtResource("3_tpoys")]
+visible = false
 position = Vector2(27, 123)
 
-[node name="InteractionListener" parent="npc" index="1" node_paths=PackedStringArray("DialogueHandler")]
+[node name="InteractionListener" parent="ysort/npc" index="1" node_paths=PackedStringArray("DialogueHandler")]
 DialogueHandler = NodePath("../DialogueHandler")
 
-[node name="DialogueHandler" parent="npc" instance=ExtResource("4_awg78")]
+[node name="DialogueHandler" parent="ysort/npc" instance=ExtResource("4_awg78")]
 
-[editable path="npc"]
+[node name="TestEnemy" parent="ysort" instance=ExtResource("2_wpegm")]
+visible = false
+position = Vector2(692, 398)
+
+[editable path="ysort/npc"]
