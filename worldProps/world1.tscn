@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://dyikkqwnnaf4y" path="res://worldProps/smieci/smieci3.png" id="17_ihq30"]
 [ext_resource type="Texture2D" uid="uid://budprenlbaso3" path="res://worldProps/bridge.png" id="18_akb3o"]
 [ext_resource type="Script" path="res://mostChangeScenes.gd" id="19_ottqm"]
-[ext_resource type="PackedScene" uid="uid://dxrug7r2rdekk" path="res://HealthUi.tscn" id="20_5r2eg"]
+[ext_resource type="PackedScene" path="res://HealthUi.tscn" id="20_5r2eg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jrrlt"]
 texture = ExtResource("4_xbfou")
