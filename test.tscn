@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://2i81ytbad2c0"]
+
+[ext_resource type="PackedScene" uid="uid://bkui8ocdu3a4w" path="res://Player/player.tscn" id="1_vgd06"]
+[ext_resource type="PackedScene" uid="uid://b7txius5yit3r" path="res://Enemy/Grucha.tscn" id="2_rt5k2"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_vq4gj"]
+vertices = PackedVector2Array(91, -36, 294, -32, 358, 78, 319, 255, 189, 273, 12, 234, 10, 157, 9, 87, 34, -7, 8, 23)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6, 7, 8), PackedInt32Array(9, 8, 7)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(8, 23, 9, 87, 10, 157, 12, 234, 189, 273, 319, 255, 358, 78, 294, -32, 91, -36, 34, -7)])
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_vgd06")]
+position = Vector2(52, 42)
+
+[node name="Grucha" parent="." instance=ExtResource("2_rt5k2")]
+position = Vector2(191, 144)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_vq4gj")
