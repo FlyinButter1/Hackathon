@@ -15,6 +15,8 @@ func _input(event):
 
 var can_attack: bool
 
+var is_blocked = false
+
 enum {
 	ATTACK,
 	MOVE
@@ -26,6 +28,8 @@ func _ready():
 	randomize()
 
 func _physics_process(delta):
+	if is_blocked:
+		return
 	match state:
 		MOVE:
 			move_state()

@@ -7,14 +7,13 @@ extends CanvasLayer
 var dialogue = []
 var current_dialogue_id = 0
 
-signal dialogue_edned
+signal dialogue_ended
 	
-func _ready():
-	start()
 
 func start():
 	visible = true
-	dialogue = load_dialogue()	
+	dialogue = load_dialogue()
+	current_dialogue_id = 0
 	$NinePatchRect/name.text = dialogue[0]['name']
 	$NinePatchRect/text.text = dialogue[0]['text']
 	$NinePatchRect/TextureRect.texture = load(dialogue[0]['img'])
@@ -33,9 +32,9 @@ func _input(event):
 func next_script():
 	current_dialogue_id +=1
 	
-	if current_dialogue_id == len(dialogue):
+	if current_dialogue_id >= len(dialogue):
 		visible = false
-		emit_signal('dialogue_edned')
+		emit_signal('dialogue_ended')
 		return
 	$NinePatchRect/name.text = dialogue[current_dialogue_id]['name']
 	$NinePatchRect/text.text = dialogue[current_dialogue_id]['text']

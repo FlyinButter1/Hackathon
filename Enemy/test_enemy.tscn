@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dsbk8g1cfmjp8" path="res://Hitbox-Hurtbox/Hitbox.tscn" id="2_y1vul"]
 [ext_resource type="PackedScene" uid="uid://dswumttan7gjl" path="res://Hitbox-Hurtbox/Hurtbox.tscn" id="3_fnha5"]
 [ext_resource type="PackedScene" uid="uid://d167xdc67mevs" path="res://Enemy/playerDetection.tscn" id="4_mw0v8"]
-[ext_resource type="Texture2D" uid="uid://c8m7yikcbwn6s" path="res://Player/test.png" id="5_280d1"]
+[ext_resource type="Texture2D" uid="uid://6lwguavdxcrv" path="res://zygmunt.png" id="5_280d1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5jjf4"]
 radius = 103.238
